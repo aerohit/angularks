@@ -14,7 +14,7 @@
       description:   '...',
       specification: '...',
       review:        '...',
-      images:        [ { full: 'gem-01.gif' } ],
+      images:        { full: 'gem-01.gif' },
       canPurchase:   true,
       soldOut:       false
     },
