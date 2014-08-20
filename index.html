@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='store'>
   <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href='bootstrap.min.css'>
   </head>
   <body>
-    <h1>This is a heading {{ 3 + 5 }}</h1>
+    <h3>Expressions</h3>
 
-    <script type="text/javascript" src="angular.min.js"></script>
+    <p>3 + 5 == {{ 3 + 5 }}</p>
+    <p>{{ 'Hello ' + 'world!' }}
+
+    <script type='text/javascript' src='angular.min.js'></script>
+    <script type='text/javascript' src='app.js'></script>
   </body>
 </html>
