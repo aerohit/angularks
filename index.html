@@ -12,6 +12,9 @@
             {{ product.name }}
             <em class='pull-right'> {{ product.price | currency }} </em>
           </h3>
+          <div class="gallery">
+            <img ng-src='{{ product.images.full }}' />
+          </div>
           <p> {{ product.description }} </p>
           <button ng-show='product.canPurchase'>Add to Cart</button>
         </div>
