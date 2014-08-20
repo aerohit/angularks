@@ -37,7 +37,13 @@
             </div>
             <div class='panel' ng-show='panelCtrl.isSelected(3)'>
               <h4>Reviews</h4>
-              <blockquote>{{ product.review }}</blockquote>
+
+              <blockquote ng-repeat='review in product.reviews'>
+                <b>Stars: {{ review.stars }}</b>
+                {{ review.body }}
+                <br />
+                <cite>-- by: {{ review.author }}</cite>
+              </blockquote>
             </div>
           </section>
           <button ng-show='product.canPurchase'>Add to Cart</button>

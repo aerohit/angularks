@@ -8,7 +8,7 @@
   });
 
   app.controller('PanelController', function() {
-    this.tabNo = 1;
+    this.tabNo = 3;
 
     this.selectTab = function(setTab) {
       this.tabNo = setTab;
@@ -25,7 +25,18 @@
       price:         2.95,
       description:   '...',
       specification: '...',
-      review:        '...',
+      reviews:       [
+        {
+          stars:    1,
+          body:     'This product sucks.',
+          author:   'abc@pqr.com'
+        },
+        {
+          stars:    5,
+          body:     'I love this product.',
+          author:   'xyz@pqr.com'
+        },
+      ],
       images:        { full: 'gem-01.gif' },
       canPurchase:   true,
       soldOut:       false
@@ -35,7 +46,18 @@
       price:         5.95,
       description:   '...',
       specification: '...',
-      review:        '...',
+      reviews:       [
+        {
+          stars:    1,
+          body:     'This product sucks.',
+          author:   'abc@pqr.com'
+        },
+        {
+          stars:    5,
+          body:     'I love this product.',
+          author:   'xyz@pqr.com'
+        },
+      ],
       images:        { full: 'gem-02.gif' },
       canPurchase:   false,
       soldOut:       false
