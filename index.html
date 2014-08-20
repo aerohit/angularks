@@ -4,10 +4,12 @@
     <link rel='stylesheet' type='text/css' href='bootstrap.min.css'>
   </head>
   <body>
-    <h3>Expressions</h3>
 
-    <p>3 + 5 == {{ 3 + 5 }}</p>
-    <p>{{ 'Hello ' + 'world!' }}
+    <div ng-controller='StoreController as storeCtrl'>
+      <h1> {{ storeCtrl.product.name }} </h1>
+      <h2> {{ storeCtrl.product.price }} </h2>
+      <p> {{ storeCtrl.product.description }} </p>
+    </div>
 
     <script type='text/javascript' src='angular.min.js'></script>
     <script type='text/javascript' src='app.js'></script>
