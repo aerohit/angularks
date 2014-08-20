@@ -7,6 +7,18 @@
     this.products = gems;
   });
 
+  app.controller('PanelController', function() {
+    this.tabNo = 1;
+
+    this.selectTab = function(setTab) {
+      this.tabNo = setTab;
+    };
+
+    this.isSelected = function(tab) {
+      return this.tabNo === tab;
+    };
+  });
+
   var gems = [
     {
       name:          'Dodecahedron',
