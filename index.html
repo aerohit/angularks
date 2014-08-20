@@ -45,29 +45,30 @@
                 <cite class='clearfix'>-{{ review.author }}</cite>
               </blockquote>
 
-              <form name='reviewForm'>
+              <form name='reviewForm' ng-controller='ReviewController as reviewCtrl' ng-submit='reviewCtrl.addReview(product)'>
                 <!--Live Review-->
+                <h5>Review Preview</h5>
                 <blockquote>
-                  <strong>{{ review.stars }} Stars</strong>
-                  {{ review.body }}
+                  <strong>{{ reviewCtrl.review.stars }} Stars</strong>
+                  {{ reviewCtrl.review.body }}
                   <br />
-                  <cite class='clearfix'>-{{ review.author }}</cite>
+                  <cite class='clearfix'>-{{ reviewCtrl.review.author }}</cite>
                 </blockquote>
 
                 <!--Review Form-->
                 <h4>Submit a Review</h4>
                 <fieldset class='form-group'>
-                  <select class='form-control' title='Stars' ng-model='review.stars' ng-options='stars for stars in [5,4,3,2,1]'>
+                  <select class='form-control' title='Stars' ng-model='reviewCtrl.review.stars' ng-options='stars for stars in [5,4,3,2,1]'>
                     <option value=''>Rate the Product</option>
                   </select>
                 </fieldset>
 
                 <fieldset class='form-group'>
-                  <textarea class='form-control' placeholder='Write a short review of the product ...' title='Review' ng-model='review.body'></textarea>
+                  <textarea class='form-control' placeholder='Write a short review of the product ...' title='Review' ng-model='reviewCtrl.review.body'></textarea>
                 </fieldset>
 
                 <fieldset class='form-group'>
-                  <input type='email' class='form-control' placeholder='email@example.com' title='Email' ng-model='review.author' />
+                  <input type='email' class='form-control' placeholder='email@example.com' title='Email' ng-model='reviewCtrl.review.author' />
                 </fieldset>
 
                 <fieldset class='form-group'>
