@@ -19,3 +19,11 @@ Explain things by focussed examples, and then create a fully functional app.
 * - ng-[repeat, show, hide] etc.
 
 * - Creating forms.
+
+
+
+## Things learned
+    * Expressions
+    * Modules
+    * Controllers
+    * Directives

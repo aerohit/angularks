@@ -6,9 +6,14 @@
   <body>
 
     <div ng-controller='StoreController as storeCtrl'>
-      <h1> {{ storeCtrl.product.name }} </h1>
-      <h2> {{ storeCtrl.product.price }} </h2>
-      <p> {{ storeCtrl.product.description }} </p>
+      <div ng-repeat='product in storeCtrl.products'>
+        <div ng-hide='product.soldOut'>
+          <h1> {{ product.name }} </h1>
+          <h2> {{ product.price }} </h2>
+          <p> {{ product.description }} </p>
+          <button ng-show='product.canPurchase'>Add to Cart</button>
+        </div>
+      </div>
     </div>
 
     <script type='text/javascript' src='angular.min.js'></script>
