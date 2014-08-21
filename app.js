@@ -3,9 +3,14 @@
 (function(){
   var app = angular.module('store', ['store-products']);
 
-  app.controller('StoreController', function() {
-    this.products = gems;
-  });
+  app.controller('StoreController', [ '$http', function($http) {
+    var store = this;
+    store.products = [];
+
+    $http.get('/products.json').success(function(data) {
+      store.products = data;
+    });
+  }]);
 
   app.controller('ReviewController', function() {
     this.review = {};
@@ -15,49 +20,4 @@
       this.review = {};
     };
   });
-
-  var gems = [
-    {
-      name:          'Dodecahedron',
-      price:         2.95,
-      description:   '...',
-      specification: '...',
-      reviews:       [
-        {
-          stars:    1,
-          body:     'This product sucks.',
-          author:   'abc@pqr.com'
-        },
-        {
-          stars:    5,
-          body:     'I love this product.',
-          author:   'xyz@pqr.com'
-        },
-      ],
-      images:        { full: 'gem-01.gif' },
-      canPurchase:   true,
-      soldOut:       false
-    },
-    {
-      name:          'Pentagonal',
-      price:         5.95,
-      description:   '...',
-      specification: '...',
-      reviews:       [
-        {
-          stars:    1,
-          body:     'This product sucks.',
-          author:   'abc@pqr.com'
-        },
-        {
-          stars:    5,
-          body:     'I love this product.',
-          author:   'xyz@pqr.com'
-        },
-      ],
-      images:        { full: 'gem-02.gif' },
-      canPurchase:   false,
-      soldOut:       false
-    }
-  ];
 })();
